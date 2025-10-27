@@ -1,0 +1,15 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int a=0,b=height.length-1;
+        int vol=((height[a]>height[b])? height[b]: height[a])*(b-a);
+        while (b>a)
+            {
+               if(height[a]< height[b]) a++;
+                   else b--;
+                int x=((height[a]>height[b])? height[b]: height[a])*(b-a);
+                if (x>vol)
+                vol=x;
+            }
+        return vol;
+    }
+}
