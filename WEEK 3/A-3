@@ -1,0 +1,17 @@
+class Solution {
+    public int maxChunksToSorted(int[] arr) {
+        int[] sorted=arr.clone();
+        Arrays.sort(sorted);
+        long sum=0;
+        long sortsum=0;
+        int chunks=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            sum+=arr[i];
+            sortsum+=sorted[i];
+            if(sum==sortsum)
+                chunks++;
+        }
+        return chunks;
+    }
+}
